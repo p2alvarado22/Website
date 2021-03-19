@@ -39,7 +39,6 @@ function loadData()
 // corresponding element in the facts list. (This is diplayed in the textbox on the web page.)
 function start()
 {
-	// Write code that stores the select object in a variable called names
 	var names = document.getElementById("prez");
 	
 	var daIndex = getIndex(names.value)  
@@ -48,7 +47,7 @@ function start()
 	{
 	    document.getElementById("funFact").value = facts[daIndex];
 	}
-	else // an invalid selection was chosen
+	else 
 	{
 		alert("Invalid Selection")
 	}
@@ -64,7 +63,7 @@ function getIndex(d)// var d = "Modern Warfare"
 	// Write a for loop that will traverse your group array.
     for(var i = 0; i < group.length; i++) // i = i + 1, i += 1
     {
-		// write an if statement that tests if the next element of grop
+		// write an if statement that tests if the next element of gropl
 		// contains the variable daList
 		if( group[i]== d ) // tests if the element at i equals the perameter
 		{
