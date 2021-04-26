@@ -1,0 +1,93 @@
+<html>
+<head>
+<script language = "JavaScript">
+
+var logoList = [ "images/mercedes.jpg", "images/bmw.jpg", "images/lamborghini.jpg", "images/volkswagen.jpg", "images/toyota.jpg", "images/honda.jpg", "images/bentley.png", "images/chevrolet.png", "images/ferrari.jpg", "images/audi.jpg"];
+var answers = ["Mercedes", "BMW", "Lamborghini", "Volkswagen", "Toyota", "Honda", "Bentley", "Chevrolet", "Ferrari", "Audi"];
+
+var number = 0;
+var score = 0;
+
+function start()
+{
+
+    var logo = document.getElementById("logoFrame");
+
+
+    logo.src = logoList[number];
+	  
+    number = number + 1;
+    if( number == 10 )
+        {
+
+             number = 9;
+        }
+
+	number++;
+	
+	if( number == logoList.length )
+	{
+		number = 0;
+	}
+	document.getElementById("logoList").value = logoList[number];
+	
+}
+
+function updateScore()
+{
+	var userAns = document.getElementById("answers").value
+	var isCorrect = checkAnswer(userAns);
+	
+	if ( isCorrect == true )
+	
+		score++;
+		alert("Your score is: "+score);
+	}
+	else
+	{
+		alert("incorrect");
+	}	
+	
+	
+}
+
+function checkAnswer(ans)
+{
+	ans = ans.toLowerCase();
+	if ( ans == logoList )
+	{	
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+	
+}
+
+</script>
+</head>
+<body bgcolor="black">
+<font color = "white">
+<center>
+<h1> Car Logo Quiz </h1>
+
+<img id="logoFrame" src= "images/guess.png"/>
+
+
+
+<br/><br/>
+<table border = 3>
+	<tr>
+
+		<td>	<input id="answers" type="text" size="70" onfocusout="updateScore()"/> </td>
+	</tr>
+</table>
+<br/><br/>
+
+<input type="button" value="Next" onclick="start()"/>
+
+
+</center>
+</body>
+</html> 
