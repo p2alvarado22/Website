@@ -2,40 +2,29 @@
 <head>
 <script language = "JavaScript">
 
-//var logoList = [ "images/mercedes.jpg", "images/bmw.jpg", "images/lamborghini.jpg", "images/volkswagen.jpg", "images/toyota.jpg", "images/honda.jpg", "images/bentley.png", "images/chevrolet.png", "images/ferrari.jpg", "images/audi.jpg"];
-//var answers = ["Mercedes", "BMW", "Lamborghini", "Volkswagen", "Toyota", "Honda", "Bentley", "Chevrolet", "Ferrari", "Audi"];
+var picList = [ "images/mercedes.jpg", "images/bmw.jpg", "images/lamborghini.jpg", "images/volkswagen.jpg", "images/toyota.jpg", "images/honda.jpg", "images/bentley.png", "images/chevrolet.png", "images/ferrari.jpg", "images/audi.jpg"];
+var answers = ["Mercedes", "BMW", "Lamborghini", "Volkswagen", "Toyota", "Honda", "Bentley", "Chevrolet", "Ferrari", "Audi"];
 
-var index = -1;
-var score = 0;
+var index = 0;
 
 function start()
-{
-    alert("hello");
-
-    var logo = document.getElementById("logoFrame");
+{      
+    var pic = document.getElementById("picFrame");
 
 
-    logo.src = logoList[score];
-	  
-    score = score + 1;
-  /*  if( score == 10 )
-        {
-
-             score = 9;
-        }
-
-		index++;
+    pic.src = picList[index];
 	
-	if( index == logoList.length )
-	{
-		index = 0;
-	}
-	document.getElementById("logoList").value = logoList[index];
-	*/
+
+    if( index == 10 )        
+    {             
+        index = 9;       
+    }
+    
 }
-/*
+
 function updateScore()
 {
+    alert(index);
 	var userAns = document.getElementById("answers").value;
 	var isCorrect = checkAnswer(userAns);
 	
@@ -49,18 +38,19 @@ function updateScore()
 		alert("incorrect");
 	}	
 	
-	
+	 index = index + 1;   
 }
+    
 
-function checkAnswer()
+function checkAnswer(a)
 {
-    if ( document.getElementById(" ").value == answers[score] )
-		     alert(“Correct”);
+    if ( a == answers[index] )
+		     return true;
 		else 
-		     alert(“Incorrect”);		
+		     return false;		
 }
 
-*/
+
 </script>
 </head>
 <body bgcolor="black">
@@ -68,20 +58,21 @@ function checkAnswer()
 <center>
 <h1> Car Logo Quiz !!</h1>
 
-<img id="logoFrame" src= "images/guess.png"/>
-
+<img id="picFrame" src= "images/guess.png"/>
 
 
 <br/><br/>
 <table border = 3>
 	<tr>
 
-		<td>	<input id="answers" type="text" size="70" onfocusout="updateScore()"/> </td>
+		<td>	<input id="answers" type="text" size="70" /> </td>
 	</tr>
 </table>
 <br/><br/>
 
-<input type="button" value="Next" onclick="start()"/>
+<input type="button" value="Check Answer" onclick="updateScore()"/>
+    <br/>
+<input type="button" value="Next Question" onclick="start()"/>
 
 
 </center>
