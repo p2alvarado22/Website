@@ -6,6 +6,7 @@ var picList = [ "images/mercedes.jpg", "images/bmw.jpg", "images/lamborghini.jpg
 var answers = ["Mercedes", "BMW", "Lamborghini", "Volkswagen", "Toyota", "Honda", "Bentley", "Chevrolet", "Ferrari", "Audi"];
 
 var index = 0;
+var score = 0;
 
 function start()
 {      
@@ -14,21 +15,20 @@ function start()
 
     pic.src = picList[index];
 	
-
     if( index == 10 )        
     {             
-        index = 9;       
+        alert("");       
     }
     
 }
 
 function updateScore()
 {
-    alert(index);
+    
 	var userAns = document.getElementById("answers").value;
 	var isCorrect = checkAnswer(userAns);
 	
-	if ( isCorrect == true )
+	if(isCorrect=="true")
 	{
 		score++;
 		alert("Your score is: "+score);
@@ -45,18 +45,19 @@ function updateScore()
 function checkAnswer(a)
 {
     if ( a == answers[index] )
-		     return true;
+		     return "true";
 		else 
-		     return false;		
+		     return "false";		
 }
 
+function finalScore
 
 </script>
 </head>
-<body bgcolor="black">
+<body background="images/y-so-serious.png" bgcolor="black">
 <font color = "white">
 <center>
-<h1> Car Logo Quiz !!</h1>
+<h1> Car Logo Quiz!</h1>
 
 <img id="picFrame" src= "images/guess.png"/>
 
