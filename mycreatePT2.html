@@ -15,11 +15,6 @@ function start()
 
     pic.src = picList[index];
 	
-    if( index == 10 )        
-    {             
-        alert("");       
-    }
-    
 }
 
 function updateScore()
@@ -39,6 +34,7 @@ function updateScore()
 	}	
 	
 	 index = index + 1;   
+    finalScore();
 }
     
 
@@ -50,15 +46,28 @@ function checkAnswer(a)
 		     return "false";		
 }
 
-function finalScore
 
+function finalScore()
+{
+    if ( index == 10 )
+        
+    {
+        alert("Your Final Score Is: "+ score);
+        
+        alert("Thank You For Playing!");
+    }
+    
+}
+    
+
+    
 </script>
 </head>
 <body background="images/y-so-serious.png" bgcolor="black">
 <font color = "white">
 <center>
-<h1> Car Logo Quiz!</h1>
-
+<h1> Car Logo Quiz</h1>
+   
 <img id="picFrame" src= "images/guess.png"/>
 
 
